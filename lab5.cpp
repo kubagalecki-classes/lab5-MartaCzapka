@@ -1,19 +1,26 @@
-#include <iostream>
-#include <vector>
 #include "Human.hpp"
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 int main()
 {
-    vector< int > wekt;
-    cout << wekt.size() << " " << wekt.capacity() << "\n";
-    for (int i = 0; i < 100; i++) {
-        wekt.emplace_back(i + 8);
-        // cout << wekt.size() << " " << wekt.capacity() << "\n";
-        cout << &wekt[0] << "\n ";
+    vector< Human > wekt;
+    string          name;
+    for (int i = 0; i < 3; i++) {
+        cout << "Podaj imie";
+        cin >> name;
+        if (name == "pop") {
+            wekt.pop_back();
+        }
+        else {
+            Human temp{name, 8, true, true};
+            wekt.emplace_back(temp);
+        }
     }
     cout << wekt.size() << " " << wekt.capacity() << "\n";
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 2; i++) {
 
-        // cout << wekt[i] << " ";
+        cout << wekt[i].getName() << " ";
     }
 }
