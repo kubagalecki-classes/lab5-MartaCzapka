@@ -4,9 +4,20 @@
 
 #include <list>
 #include <vector>
-
-std::vector< char > foo(std::list< Human >& people)
+using namespace std;
+vector< char > foo(list< Human >& people)
 {
-    // Twoja implementacja tutaj
-    return {};
-}
+    int n=people.size();
+    vector<char> niepotwor;
+    list<Human>::iterator it=people.end();
+    it--;
+    for(int i=0;i<n; i++){
+      if(it->isMonster())
+        niepotwor.push_back('n');
+        else
+        niepotwor.push_back('y');
+      it->birthday();
+      it--;
+    }
+    return niepotwor;
+    }
